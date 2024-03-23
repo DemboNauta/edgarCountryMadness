@@ -1,0 +1,384 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/mapa2.jpg");
+    background-position: center top;    
+    transition: background-color 0.5s ease-in-out;
+
+}
+#modoOscuro{
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #e2d1c9; 
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+    
+#modoOscuro:hover {
+    background-color: #45a049;
+}
+
+
+.container {
+    width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff92;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 2%;
+}
+
+.option {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ffffff6a;
+    transition: background-color 0.3s;
+}
+
+.option:hover {
+    background-color: #edededeb;
+
+}
+
+.section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f7f7b3;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, button {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+.selected{
+    background-color: #edededeb;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#detallesCiudad, #distanciaCiudades {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+#divBanderas{
+    width: 1200px;
+}
+
+#distanciaCiudades {
+
+    display: flex;
+    display: none;
+    justify-content: space-between;
+}
+#detallesCiudad {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#detallesCiudad h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#detallesCiudad p {
+    color: #666;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+#detallesCiudad #poblacion {
+    font-weight: bold;
+    color: #e44d26; 
+}
+#sectionDatosLugar input[type="text"]{
+    width: 37.5%;
+    background: #f0f0f0;
+	color: #7b7b7b;
+    font-family: 'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    padding: 7px 10px;
+    font-size: 1em;
+}
+#sectionDatosLugar form select{
+	display: inline-block;
+	width: 40%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #333333;
+	font-family: 'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+#sectionDatosPais input[type="button"]{
+    background-color: rgb(211, 211, 207);
+    border-radius: 6px;
+}
+#sectionDatosPais #buscador{
+    text-align: center;
+}
+
+#datosDelPais{
+    width: 50%;
+    margin: 30px auto;
+    
+    padding: 10px;
+    border-radius: 8px;
+}
+.cargando-mensaje {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.cargando-mensajeLugar {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.hiddenTut{
+    opacity: 0;
+    transition: opacity 1.6s ease;
+}
+.fade-in {
+    opacity: 1;
+}
+#btnTutorial{
+    background-color: #a2a2a2;
+    color: white;
+    font-size: 1.2em;
+    border: 2px solid white;
+    cursor: pointer;
+    margin: auto;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+#btnJugar{
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+#btnJugar:hover{
+    background-color: #2c362d; 
+}
+#btnTutorial:hover{
+    background-color: #767676;
+
+}
+#divBoton{
+    display: flex;
+}
+#informacionPais{
+    max-width: 100%;
+    margin-top: 5%;
+}
+
+#informacionPais img{
+    max-width: 20%;
+}
+#contadorPuntos{
+    font-size: 1.5em;
+    color: red;
+    font-weight: bolder;
+}
+#parrafoMaximosPuntos{
+    text-align: right;
+    margin-right: 15%;
+
+}
+#mensajeAcierto {
+    background-color: #4CAF50;
+    color: #fff; 
+    padding: 15px;
+    border-radius: 8px; 
+    text-align: center; 
+    font-size: 16px; 
+    margin-top: 20px; 
+    width: 30%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+}
+
+#mensajeAcierto.mostrar {
+
+    animation: fadeOut 2s ease-in-out; 
+}
+#divErrores{
+    justify-content: center;
+}
+#mensajeError{
+    background-color: #cb451c;
+    color: #fff; 
+    padding: 15px;
+    border-radius: 8px; 
+    text-align: center; 
+    font-size: 16px; 
+    margin-top: 20px; 
+    width: 50%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+}
+#fotoError{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+}
+#mensajeError.mostrar, #fotoError.mostrar{
+    display: block;
+    animation: fadeOut 4s ease-in-out; 
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+#fotoError{
+    opacity: 0;
+}
+#btnAdivinar{
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+#btnAdivinar:hover{
+    background-color: #969696;
+
+}
+#buscarPais{
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+
+@media (max-width: 600px){
+    h1{
+        font-size: 2rem;
+    }
+    body {
+        background-position: center top;
+        transition: background-color 0.5s ease-in-out;
+    
+    }
+    .container {
+        width: 80%;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+    }
+    .options {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        gap: 2%;
+        flex-wrap: wrap;
+    }
+    .option{
+        max-width: 90%;
+        min-width: 90%;
+    }
+    #sectionDatosLugar input[type="text"] {
+        width: 60%;
+    }
+    #sectionDatosLugar form select {
+        width: 66.5%;
+    }
+    #datosDelPais{
+        width: 90%;
+    }
+}

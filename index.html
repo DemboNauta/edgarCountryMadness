@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdgarCountryMadness</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/brujula.png" type="image/x-icon">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1 id="titulo">EdgarCountryMadness</h1>
+        <button id="modoOscuro">Modo Oscuro</button>
+
+        <div class="options">
+            <div class="option" id="optionDatosLugar">
+                <h2>Datos de un Lugar</h2>
+                <p>Obtener información detallada de un lugar.</p>
+            </div>
+
+            <div class="option selected" id="adivinaElPais">
+                <h2>Adivina el País</h2>
+                <p>Minijuego para aprender banderas</p>
+            </div>
+
+            <div class="option" id="optionDatosPais">
+                <h2>Datos de un País</h2>
+                <p>Obtener información sobre un país.</p>
+            </div>
+
+
+        </div>
+
+        <div id="sectionDatosLugar" class="hidden section">
+            <script src="js/datosLugar.js"></script>
+            <h1>Datos de un Lugar</h1>
+        
+            <form>
+                <label for="localidad">Buscar Ciudad:</label>
+                <input type="text" id="localidad" placeholder="Ingresa el nombre de la ciudad">
+                <input type="button" value="Buscar" id="buscar"><br>
+        
+                <select name="localidades" id="localidades"></select>
+                <input type="button" value="Aceptar" id="aceptar"><br>
+            </form>
+            <div id="cargandoMensajeCiudad" class="cargando-mensajeLugar">
+                <div class="spinner"></div>
+            </div>
+            <div id="detallesCiudad">
+                    
+            </div>
+
+        </div>
+        
+
+        <div id="sectionAdivinaElPais" class="section">
+            <script src="js/adivinaPais.js"></script>
+            <h1>Aprende jugando con EdgarCountryMadness!</h1>
+            <div id="divBoton">
+                <input type="button" value="Empezar tutorial" id="btnTutorial">
+            </div>
+            
+            <div id="tutorial" class="hiddenTut">
+                <p>El funcionamiento del juego es el siguiente:</p>
+                <p>Te vamos a mostrar una bandera de un país y tienes que responder con el nombre del país que sea: </p>
+                <p>Un ejemplo: </p>
+                <p>Te mostraremos una bandera como la siguiente➡</p><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="" width="20%"><br>
+                <p>Y tu tendrás un cuadro de texto en que escribirás la respuesta, cuida las tildes! </p>
+                <input type="text" value="España" readonly>
+                <input type="button" value="Adivinar">
+                <p>Si es correcta tu contador aumentará <span id="contadorTutorial">0</span> y si fallas pierdes la ronda.</p>
+                <p>Intenta superarte en cada partida!</p>
+                <input type="button" value="Jugar!" id="btnJugar">
+            </div>
+
+            <div id="informacionPais" class="hidden">
+                <p id="parrafoMaximosPuntos">Maximo: <span id="maximosPuntos">0</span></p>
+                <div id="mensajeAcierto" class="mensaje">Correcto!</div>
+                <div id="divErrores">
+                    <p id="mensajeError">MAAAAAL era <span id="paisCorrecto"></span></p><br>
+                    <img id="fotoError" width="500px">
+                </div>
+                <div id="divBanderas">
+                    <img id="banderaPais">
+                </div>
+                <p>Puntos: <span id="contadorPuntos">0</span></p>
+                <input type="text" id="inputPais" placeholder="Ingresa el país">
+                <input type="button" value="Adivinar" id="btnAdivinar">
+            </div>
+            
+            
+        </div>
+
+        <div id="sectionDatosPais" class="hidden section">
+            <script src="js/datosPais.js"></script>
+
+            <div id="buscador">
+                <label for="pais"><h1>Que país quieres buscar:</h1></label>
+                <input type="text" id="pais" placeholder="Ingresa el nombre del pais">
+                <input type="button" value="Buscar país" id="buscarPais">
+            </div>
+            <div id="cargandoMensaje" class="cargando-mensaje">
+                <div class="spinner"></div>
+            </div>
+            <div id="datosDelPais">
+                
+                
+            </div>
+        </div>
+
+        
+
+    </div>
+
+
+    
+</body>
+</html>
